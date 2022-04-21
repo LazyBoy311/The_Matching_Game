@@ -1,0 +1,67 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o includes/adjustterminal.o includes/button.o includes/endstate.o includes/gamehandler.o includes/gamestate.o includes/matching.o includes/menustate.o includes/point.o includes/leaderboard.o includes/leaderboardcomponent.o includes/graphic.o includes/graphicrender.o includes/suggestmove.o
+LINKOBJ  = main.o includes/adjustterminal.o includes/button.o includes/endstate.o includes/gamehandler.o includes/gamestate.o includes/matching.o includes/menustate.o includes/point.o includes/leaderboard.o includes/leaderboardcomponent.o includes/graphic.o includes/graphicrender.o includes/suggestmove.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11
+CFLAGS   = $(INCS) -std=gnu++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+includes/adjustterminal.o: includes/adjustterminal.cpp
+	$(CPP) -c includes/adjustterminal.cpp -o includes/adjustterminal.o $(CXXFLAGS)
+
+includes/button.o: includes/button.cpp
+	$(CPP) -c includes/button.cpp -o includes/button.o $(CXXFLAGS)
+
+includes/endstate.o: includes/endstate.cpp
+	$(CPP) -c includes/endstate.cpp -o includes/endstate.o $(CXXFLAGS)
+
+includes/gamehandler.o: includes/gamehandler.cpp
+	$(CPP) -c includes/gamehandler.cpp -o includes/gamehandler.o $(CXXFLAGS)
+
+includes/gamestate.o: includes/gamestate.cpp
+	$(CPP) -c includes/gamestate.cpp -o includes/gamestate.o $(CXXFLAGS)
+
+includes/matching.o: includes/matching.cpp
+	$(CPP) -c includes/matching.cpp -o includes/matching.o $(CXXFLAGS)
+
+includes/menustate.o: includes/menustate.cpp
+	$(CPP) -c includes/menustate.cpp -o includes/menustate.o $(CXXFLAGS)
+
+includes/point.o: includes/point.cpp
+	$(CPP) -c includes/point.cpp -o includes/point.o $(CXXFLAGS)
+
+includes/leaderboard.o: includes/leaderboard.cpp
+	$(CPP) -c includes/leaderboard.cpp -o includes/leaderboard.o $(CXXFLAGS)
+
+includes/leaderboardcomponent.o: includes/leaderboardcomponent.cpp
+	$(CPP) -c includes/leaderboardcomponent.cpp -o includes/leaderboardcomponent.o $(CXXFLAGS)
+
+includes/graphic.o: includes/graphic.cpp
+	$(CPP) -c includes/graphic.cpp -o includes/graphic.o $(CXXFLAGS)
+
+includes/graphicrender.o: includes/graphicrender.cpp
+	$(CPP) -c includes/graphicrender.cpp -o includes/graphicrender.o $(CXXFLAGS)
+
+includes/suggestmove.o: includes/suggestmove.cpp
+	$(CPP) -c includes/suggestmove.cpp -o includes/suggestmove.o $(CXXFLAGS)
